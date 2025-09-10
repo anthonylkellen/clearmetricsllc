@@ -66,7 +66,7 @@
       align-items: center;
       text-align: center;
       padding: 6rem 2rem;
-      background: var(--brand-primary); /* Solid background for better readability */
+      background: var(--brand-primary); /* Solid background for readability */
       color: white;
     }
     .hero h1 {
@@ -109,6 +109,21 @@
       font-size: 1.1rem;
     }
 
+    /* About Section with Photo */
+    .about-container {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;  /* circular crop */
+      object-fit: cover;   /* keeps aspect ratio */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
     /* Footer */
     footer {
       text-align: center;
@@ -128,6 +143,10 @@
       }
       .hero p {
         font-size: 1rem;
+      }
+      .about-container {
+        flex-direction: column;
+        text-align: center;
       }
     }
   </style>
@@ -161,7 +180,12 @@
   <!-- About -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Clear Metrics was founded with a mission: to help businesses make sense of their data. With expertise in SQL, data modeling, and dashboard reporting, we provide the clarity leaders need to make informed decisions.</p>
+    <div class="about-container">
+      <img src="me.jpg" alt="Photo of Anthony Kellen" class="about-photo">
+      <p>Clear Metrics was founded with a mission: to help businesses make sense of their data. 
+      With expertise in SQL, data modeling, and dashboard reporting, we provide the clarity 
+      leaders need to make informed decisions.</p>
+    </div>
   </section>
 
   <!-- Contact -->
