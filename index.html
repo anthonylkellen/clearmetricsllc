@@ -18,12 +18,21 @@
       --brand-bg: #F3F4F6;       /* Light Gray Background */
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: "Manrope", Arial, sans-serif;
       color: var(--brand-ink);
       background: var(--brand-bg);
       line-height: 1.6;
+
+      /* Fix for mobile bottom padding */
+      display: flex;
+      flex-direction: column;
     }
 
     /* Navigation */
@@ -67,7 +76,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem; /* default for desktop */
+      padding: 6rem 2rem; /* desktop default */
       background: var(--brand-primary);
       color: white;
     }
@@ -143,6 +152,8 @@
       font-size: 0.9rem;
       color: var(--brand-muted);
       margin: 0;
+
+      margin-top: auto; /* ensure footer hugs bottom */
     }
 
     /* Mobile */
