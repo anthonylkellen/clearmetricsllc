@@ -67,7 +67,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem;
+      padding: 6rem 2rem; /* default for desktop */
       background: var(--brand-primary);
       color: white;
     }
@@ -137,29 +137,35 @@
 
     /* Footer */
     footer {
+      background: var(--brand-bg);
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem 1rem;
       font-size: 0.9rem;
       color: var(--brand-muted);
+      margin: 0;
     }
 
     /* Mobile */
     @media (max-width: 600px) {
       nav {
-        padding: 1rem 1rem;          /* reduce padding */
-        justify-content: flex-start; /* anchor left */
+        padding: 1rem 1rem;
+        justify-content: flex-start;
       }
       nav img {
-        height: 75px;                /* larger logo */
+        height: 75px;
         align-self: flex-start;
         margin-left: 0;
         margin-right: auto;
       }
       nav ul {
         width: 100%;
-        justify-content: center;     /* menu centered under logo */
+        justify-content: center;
         gap: 1.25rem;
         margin-top: 0.5rem;
+      }
+      /* Condensed hero for mobile */
+      .hero {
+        padding: 3rem 1rem;
       }
       .hero h1 {
         font-size: 2rem;
