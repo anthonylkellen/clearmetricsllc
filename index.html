@@ -37,10 +37,10 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      flex-wrap: wrap; /* allow wrapping on mobile */
+      flex-wrap: wrap;
     }
     nav img {
-      height: 70px; /* default */
+      height: 70px;
     }
     nav ul {
       list-style: none;
@@ -68,7 +68,7 @@
       align-items: center;
       text-align: center;
       padding: 6rem 2rem;
-      background: var(--brand-primary); /* Solid background */
+      background: var(--brand-primary);
       color: white;
     }
     .hero h1 {
@@ -78,19 +78,20 @@
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
+      color: white; /* force tagline white */
     }
     .button {
       display: inline-block;
       padding: 12px 24px;
       font-size: 1rem;
       background: var(--brand-accent-amber);
-      color: white; /* white text for contrast */
+      color: white;
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s ease;
     }
     .button:hover {
-      background: #fbbf24; /* lighter amber */
+      background: #fbbf24;
     }
 
     /* Sections */
@@ -105,23 +106,23 @@
     section h2 {
       color: var(--brand-primary);
       margin-bottom: 1rem;
-      text-align: center; /* centered headings */
+      text-align: center;
     }
     section p {
-      color: #374151; /* darker gray */
+      color: #374151;
       font-size: 1.1rem;
     }
 
     /* About Section with Photo */
     .about-container {
       display: flex;
-      flex-direction: column; /* always stack */
+      flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 1rem;
     }
     .about-photo {
-      width: 300px;  /* larger size */
+      width: 300px;
       height: 300px;
       border-radius: 50%;
       object-fit: cover;
@@ -131,7 +132,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       margin: 0;
-      color: var(--brand-ink);
+      color: var(--brand-primary); /* blue name */
     }
 
     /* Footer */
@@ -145,7 +146,7 @@
     /* Mobile */
     @media (max-width: 600px) {
       nav img {
-        height: 50px; /* smaller logo for mobile */
+        height: 50px;
       }
       .hero h1 {
         font-size: 2rem;
@@ -158,7 +159,7 @@
     /* Desktop logo scaling */
     @media (min-width: 1024px) {
       nav img {
-        height: 105px; /* 50% larger on desktops */
+        height: 105px;
       }
     }
   </style>
@@ -195,8 +196,8 @@
     <div class="about-container">
       <img src="me.jpg" alt="Photo of Tony Kellen" class="about-photo">
       <h3 class="about-name">Tony Kellen</h3>
-      <p>Clear Metrics was founded with a mission: to help businesses make sense of their data. 
-      With expertise in SQL, data modeling, and dashboard reporting, we provide the clarity 
+      <p>Tony founded Clear Metrics with a mission: to help businesses make sense of their data. 
+      With expertise in SQL, data modeling, and dashboard reporting, he provides the clarity 
       leaders need to make informed decisions.</p>
     </div>
   </section>
@@ -204,7 +205,7 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email us at: <a href="mailto:anthonylkellen@gmail.com">anthonylkellen@gmail.com</a></p>
+    <p>Email Tony at: <a href="mailto:anthonylkellen@gmail.com">anthonylkellen@gmail.com</a></p>
   </section>
 
   <!-- Footer -->
