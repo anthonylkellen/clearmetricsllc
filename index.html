@@ -145,9 +145,21 @@
 
     /* Mobile */
     @media (max-width: 600px) {
+      nav {
+        padding: 1rem 1rem;          /* reduce padding */
+        justify-content: flex-start; /* anchor left */
+      }
       nav img {
-        height: 75px; /* larger logo */
-        margin-right: auto; /* push logo left */
+        height: 75px;                /* larger logo */
+        align-self: flex-start;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      nav ul {
+        width: 100%;
+        justify-content: center;     /* menu centered under logo */
+        gap: 1.25rem;
+        margin-top: 0.5rem;
       }
       .hero h1 {
         font-size: 2rem;
