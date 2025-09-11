@@ -30,7 +30,7 @@
       background: var(--brand-bg);
       line-height: 1.6;
 
-      /* Fix for mobile bottom padding */
+      /* Flex column layout for sticky footer */
       display: flex;
       flex-direction: column;
     }
@@ -148,12 +148,12 @@
     footer {
       background: var(--brand-bg);
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 1.5rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
       font-size: 0.9rem;
       color: var(--brand-muted);
       margin: 0;
 
-      margin-top: auto; /* ensure footer hugs bottom */
+      margin-top: auto; /* stick footer to bottom */
     }
 
     /* Mobile */
