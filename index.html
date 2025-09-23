@@ -31,10 +31,10 @@
       flex-direction: column;
     }
 
-    /* === Fixed nav on desktop === */
+    /* === Desktop Fixed nav === */
     nav {
       background: #fff;
-      padding: 1rem 1rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: flex-start; /* Align logo and menu on left */
       align-items: center;
@@ -179,8 +179,7 @@
       nav {
         padding: 1rem 1rem;
         justify-content: flex-start;
-        top: 0;
-        position: sticky; /* Use sticky for mobile */
+        position: fixed; /* Ensure fixed position on mobile too */
         width: 100%;
         z-index: 1000;
       }
