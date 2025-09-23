@@ -63,11 +63,11 @@
       color: var(--brand-primary);
     }
 
-    /* Anchor spacing fix (default desktop) */
+    /* Anchor spacing fix */
     [id]::before {
       content: "";
       display: block;
-      height: 140px; /* nav height (120px) + extra spacing (20px) */
+      height: 140px;   /* nav height (120px) + extra 20px */
       margin-top: -140px;
       visibility: hidden;
     }
@@ -174,10 +174,10 @@
       .hero p {
         font-size: 1rem;
       }
-      /* Smaller anchor gap on mobile */
+      /* Mobile anchor spacing */
       [id]::before {
-        height: 110px;  /* nav height (~95px) + 10-15px gap */
-        margin-top: -110px;
+        height: 120px;   /* nav (~100px) + 20px gap */
+        margin-top: -120px;
       }
     }
     @media (min-width: 1024px) {
