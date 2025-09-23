@@ -16,7 +16,7 @@
     }
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 140px; /* nav height (~120px) + gap */
+      scroll-padding-top: 140px; /* nav height (~120px) + 20px breathing room */
     }
     @media (max-width: 600px) {
       html {
@@ -36,8 +36,6 @@
       display: flex;
       flex-direction: column;
     }
-
-    /* === Sticky nav === */
     nav {
       background: #fff;
       padding: 1rem 2rem;
@@ -71,7 +69,6 @@
       color: var(--brand-primary);
     }
 
-    /* === Hero section === */
     .hero {
       display: flex;
       flex-direction: column;
@@ -105,8 +102,6 @@
     .button:hover {
       background: #fbbf24;
     }
-
-    /* === Content sections === */
     section {
       padding: 4rem 2rem;
       background: #fff;
@@ -124,7 +119,6 @@
       color: #374151;
       font-size: 1.1rem;
     }
-
     .about-container {
       display: flex;
       flex-direction: column;
@@ -145,8 +139,6 @@
       margin: 0;
       color: var(--brand-primary);
     }
-
-    /* === Footer === */
     footer {
       background: var(--brand-bg);
       text-align: center;
@@ -155,15 +147,6 @@
       color: var(--brand-muted);
       margin-top: auto;
     }
-
-    /* === Spacer fix so nav never disappears === */
-    body::after {
-      content: "";
-      display: block;
-      height: 200px; /* ensures space at bottom so sticky nav never scrolls off */
-    }
-
-    /* === Mobile adjustments === */
     @media (max-width: 600px) {
       nav {
         padding: 1rem 1rem;
