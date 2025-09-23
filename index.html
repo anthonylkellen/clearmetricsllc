@@ -14,38 +14,44 @@
       --brand-muted: #9CA3AF;
       --brand-bg: #F3F4F6;
     }
+
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 140px; /* nav height (~120px) + gap */
+      scroll-padding-top: 140px; /* offset for anchors */
     }
     @media (max-width: 600px) {
       html {
-        scroll-padding-top: 120px; /* smaller nav (~100px) + gap */
+        scroll-padding-top: 120px;
       }
     }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+
     body {
       font-family: "Manrope", Arial, sans-serif;
       color: var(--brand-ink);
       background: var(--brand-bg);
       line-height: 1.6;
+      margin: 0;
+      padding-top: 140px; /* offset so content isn’t hidden under fixed nav */
       display: flex;
       flex-direction: column;
     }
+    @media (max-width: 600px) {
+      body {
+        padding-top: 120px; /* smaller nav on mobile */
+      }
+    }
 
-    /* === Sticky nav === */
+    /* === Fixed nav === */
     nav {
       background: #fff;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       flex-wrap: wrap;
@@ -95,7 +101,7 @@
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: white !important; /* force white tagline */
+      color: white !important;
     }
     .button {
       display: inline-block;
@@ -159,13 +165,6 @@
       font-size: 0.9rem;
       color: var(--brand-muted);
       margin-top: auto;
-    }
-
-    /* === Spacer fix so nav never disappears === */
-    body::after {
-      content: "";
-      display: block;
-      height: 200px;
     }
 
     /* === Mobile adjustments === */
