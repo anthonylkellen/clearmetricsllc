@@ -60,21 +60,23 @@
       height: 70px;
     }
 
-    /* === Shift only menu items === */
+    /* === Fix menu overflow issue === */
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 1rem; /* reduced gap to fit better */
       margin: 0;
       padding: 0;
-      flex-wrap: wrap;
-      margin-left: 2rem; /* Shift the menu items to the left */
+      flex-wrap: nowrap;  /* Prevents wrapping */
+      margin-left: 2rem;  /* Shift items left */
+      max-width: calc(100% - 100px); /* Ensure items don't overflow */
     }
     nav ul li a {
       text-decoration: none;
       color: var(--brand-ink);
       font-weight: 600;
       transition: color 0.3s ease;
+      flex-shrink: 0; /* Prevent shrinking */
     }
     nav ul li a:hover {
       color: var(--brand-primary);
