@@ -14,71 +14,61 @@
       --brand-muted: #9CA3AF;
       --brand-bg: #F3F4F6;
     }
-
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 140px; /* offset for anchors */
+      scroll-padding-top: 140px; /* nav height (~120px) + gap */
     }
-
+    @media (max-width: 600px) {
+      html {
+        scroll-padding-top: 120px; /* smaller nav (~100px) + gap */
+      }
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: "Manrope", Arial, sans-serif;
       color: var(--brand-ink);
       background: var(--brand-bg);
       line-height: 1.6;
-      margin: 0;
-      padding-top: 140px; /* offset for fixed nav */
       display: flex;
       flex-direction: column;
     }
 
-    /* === Desktop Fixed nav === */
+    /* === Sticky nav === */
     nav {
       background: #fff;
       padding: 1rem 2rem;
       display: flex;
-      justify-content: flex-start; /* Align logo and menu on left */
+      justify-content: space-between;
       align-items: center;
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
     }
-
     nav img {
       height: 70px;
     }
-
-    /* === Menu items alignment === */
     nav ul {
       list-style: none;
       display: flex;
-      gap: 2rem; /* Space between menu items */
+      gap: 2rem;
       margin: 0;
       padding: 0;
-      flex-wrap: nowrap;  /* Prevent wrapping */
-      justify-content: flex-start; /* Align menu items to the left */
-      flex-grow: 1;
-      margin-left: 2rem;  /* Added space between logo and menu items */
+      flex-wrap: wrap;
     }
-
     nav ul li a {
       text-decoration: none;
       color: var(--brand-ink);
       font-weight: 600;
       transition: color 0.3s ease;
     }
-
     nav ul li a:hover {
       color: var(--brand-primary);
-    }
-
-    nav ul li a.active {
-      color: var(--brand-primary);
-      border-bottom: 2px solid var(--brand-primary);
-      padding-bottom: 2px;
     }
 
     /* === Hero section === */
@@ -92,19 +82,16 @@
       background: var(--brand-primary);
       color: white;
     }
-
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: white;
     }
-
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: white !important;
+      color: white !important; /* force white tagline */
     }
-
     .button {
       display: inline-block;
       padding: 12px 24px;
@@ -115,7 +102,6 @@
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
     .button:hover {
       background: #fbbf24;
     }
@@ -129,13 +115,11 @@
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
-
     section h2 {
       color: var(--brand-primary);
       margin-bottom: 1rem;
       text-align: center;
     }
-
     section p {
       color: #374151;
       font-size: 1.1rem;
@@ -148,7 +132,6 @@
       text-align: center;
       gap: 1rem;
     }
-
     .about-photo {
       width: 300px;
       height: 300px;
@@ -156,7 +139,6 @@
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-
     .about-name {
       font-size: 1.5rem;
       font-weight: 700;
@@ -174,55 +156,51 @@
       margin-top: auto;
     }
 
+    /* === Spacer fix so nav never disappears === */
+    body::after {
+      content: "";
+      display: block;
+      height: 200px; /* ensures space at bottom so sticky nav never scrolls off */
+    }
+
     /* === Mobile adjustments === */
     @media (max-width: 600px) {
       nav {
         padding: 1rem 1rem;
         justify-content: flex-start;
-        position: fixed; /* Ensure fixed position on mobile too */
-        width: 100%;
-        z-index: 1000;
       }
-
       nav img {
         height: 75px;
         margin-right: auto;
       }
-
       nav ul {
         width: 100%;
         justify-content: center;
         gap: 1.25rem;
         margin-top: 0.5rem;
-        margin-right: 0;
       }
-
       .hero {
         padding: 3rem 1rem;
       }
-
       .hero h1 {
         font-size: 2rem;
       }
-
       .hero p {
         font-size: 1rem;
       }
     }
-
     @media (min-width: 1024px) {
       nav img {
         height: 105px;
       }
     }
-
   </style>
 </head>
 <body>
   <nav>
     <img src="clear-metrics-C-Manrope-horizontal.svg" alt="Clear Metrics Logo">
     <ul>
-      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -252,28 +230,5 @@
   <footer>
     <p>© 2025 Clear Metrics, LLC. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Highlight active nav link on scroll
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll("nav ul li a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 160;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
-    });
-  </script>
 </body>
 </html>
