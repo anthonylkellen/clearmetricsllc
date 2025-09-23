@@ -19,11 +19,6 @@
       scroll-behavior: smooth;
       scroll-padding-top: 140px; /* offset for anchors */
     }
-    @media (max-width: 600px) {
-      html {
-        scroll-padding-top: 120px;
-      }
-    }
 
     body {
       font-family: "Manrope", Arial, sans-serif;
@@ -39,7 +34,7 @@
     /* === Fixed nav === */
     nav {
       background: #fff;
-      padding: 1rem 1rem; /* Reduced left padding */
+      padding: 1rem 1rem;
       display: flex;
       justify-content: flex-start; /* Align logo and menu on left */
       align-items: center;
@@ -50,7 +45,10 @@
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       flex-wrap: nowrap;
+      visibility: visible; /* Ensure it's visible */
+      opacity: 1;
     }
+
     nav img {
       height: 70px;
     }
@@ -67,15 +65,18 @@
       flex-grow: 1;
       margin-left: 2rem;  /* Added space between logo and menu items */
     }
+
     nav ul li a {
       text-decoration: none;
       color: var(--brand-ink);
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     nav ul li a:hover {
       color: var(--brand-primary);
     }
+
     nav ul li a.active {
       color: var(--brand-primary);
       border-bottom: 2px solid var(--brand-primary);
@@ -103,6 +104,7 @@
       margin-bottom: 2rem;
       color: white !important;
     }
+
     .button {
       display: inline-block;
       padding: 12px 24px;
@@ -126,11 +128,13 @@
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+
     section h2 {
       color: var(--brand-primary);
       margin-bottom: 1rem;
       text-align: center;
     }
+
     section p {
       color: #374151;
       font-size: 1.1rem;
@@ -143,6 +147,7 @@
       text-align: center;
       gap: 1rem;
     }
+
     .about-photo {
       width: 300px;
       height: 300px;
@@ -150,6 +155,7 @@
       object-fit: cover;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+
     .about-name {
       font-size: 1.5rem;
       font-weight: 700;
@@ -172,11 +178,18 @@
       nav {
         padding: 1rem 1rem;
         justify-content: flex-start;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
       }
+
       nav img {
         height: 75px;
         margin-right: auto;
       }
+
       nav ul {
         width: 100%;
         justify-content: center;
@@ -184,12 +197,15 @@
         margin-top: 0.5rem;
         margin-right: 0;
       }
+
       .hero {
         padding: 3rem 1rem;
       }
+
       .hero h1 {
         font-size: 2rem;
       }
+
       .hero p {
         font-size: 1rem;
       }
@@ -200,7 +216,6 @@
         height: 105px;
       }
     }
-
   </style>
 </head>
 <body>
