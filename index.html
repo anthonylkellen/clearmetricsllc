@@ -31,13 +31,13 @@
       background: var(--brand-bg);
       line-height: 1.6;
       margin: 0;
-      padding-top: 140px; /* offset so content isn’t hidden under fixed nav */
+      padding-top: 140px; /* offset for fixed nav */
       display: flex;
       flex-direction: column;
     }
     @media (max-width: 600px) {
       body {
-        padding-top: 120px; /* smaller nav on mobile */
+        padding-top: 120px;
       }
     }
 
@@ -66,6 +66,7 @@
       margin: 0;
       padding: 0;
       flex-wrap: wrap;
+      margin-right: 1rem; /* shift menu left */
     }
     nav ul li a {
       text-decoration: none;
@@ -182,6 +183,7 @@
         justify-content: center;
         gap: 1.25rem;
         margin-top: 0.5rem;
+        margin-right: 0; /* reset on mobile */
       }
       .hero {
         padding: 3rem 1rem;
@@ -243,7 +245,7 @@
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 160; // adjust for nav height + gap
+        const sectionTop = section.offsetTop - 160;
         if (pageYOffset >= sectionTop) {
           current = section.getAttribute("id");
         }
