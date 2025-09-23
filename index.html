@@ -1,110 +1,212 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Clear Metrics, LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
   <style>
     :root {
-      --brand-primary: #2563EB;  /* Royal Blue */
+      --brand-primary: #2563EB;
       --brand-accent-mint: #10B981;
       --brand-accent-amber: #F59E0B;
-      --brand-ink: #111827;      /* Dark Text */
-      --brand-muted: #9CA3AF;    /* Muted Gray */
-      --brand-bg: #F3F4F6;       /* Light neutral background */
+      --brand-ink: #111827;
+      --brand-muted: #9CA3AF;
+      --brand-bg: #F3F4F6;
     }
-
-    body {
+    html {
+      scroll-behavior: smooth;
+    }
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+    body {
       font-family: "Manrope", Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: var(--brand-bg);
-      text-align: center;
       color: var(--brand-ink);
+      background: var(--brand-bg);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
     }
-
-    .container {
-      max-width: 700px;
-      padding: 30px;
+    nav {
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
     }
-
-    img {
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 20px;
+    nav img {
+      height: 70px;
     }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--brand-ink);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
       color: var(--brand-primary);
     }
-
-    p {
-      font-size: 1.2rem;
-      color: var(--brand-muted);
-      margin-bottom: 30px;
+    [id] {
+      scroll-margin-top: 120px;
     }
-
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem;
+      background: var(--brand-primary);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
     .button {
       display: inline-block;
       padding: 12px 24px;
       font-size: 1rem;
+      background: var(--brand-accent-amber);
       color: white;
-      background: var(--brand-primary);
       border-radius: 8px;
       text-decoration: none;
       transition: background 0.3s ease;
     }
-
     .button:hover {
-      background: var(--brand-accent-amber);
+      background: #fbbf24;
     }
-
-    /* Mobile-friendly adjustments */
+    section {
+      padding: 4rem 2rem;
+      background: #fff;
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    section h2 {
+      color: var(--brand-primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    section p {
+      color: #374151;
+      font-size: 1.1rem;
+    }
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+    .about-photo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .about-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--brand-primary);
+    }
+    footer {
+      background: var(--brand-bg);
+      text-align: center;
+      padding: 1.5rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
+      font-size: 0.9rem;
+      color: var(--brand-muted);
+      margin-top: auto;
+    }
     @media (max-width: 600px) {
-      .container {
-        padding: 20px;
+      nav {
+        padding: 1rem 1rem;
+        justify-content: flex-start;
       }
-
-      img {
-        max-width: 80%;
-        margin-bottom: 15px;
+      nav img {
+        height: 75px;
+        margin-right: auto;
       }
-
-      h1 {
-        font-size: 1.5rem;
+      nav ul {
+        width: 100%;
+        justify-content: center;
+        gap: 1.25rem;
+        margin-top: 0.5rem;
       }
-
-      p {
+      .hero {
+        padding: 3rem 1rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
         font-size: 1rem;
-        margin-bottom: 20px;
       }
-
-      .button {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+    }
+    @media (min-width: 1024px) {
+      nav img {
+        height: 105px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <nav>
     <img src="clear-metrics-C-Manrope-horizontal.svg" alt="Clear Metrics Logo">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="hero" id="home">
     <h1>Clear Metrics, LLC</h1>
-    <p>Data with Clarity. Website coming soon.</p>
-    <a href="mailto:info@clearmetricsllc.com" class="button">Contact Us</a>
-  </div>
+    <p>Data with Clarity. Transform your business decisions with simplified analytics.</p>
+    <a href="#contact" class="button">Get in Touch</a>
+  </section>
+  <section id="services">
+    <h2>Services</h2>
+    <p>I specialize in SQL data models, reporting, and analytics that turn complex information into clear, actionable insights. My approach ensures your data is not just stored — it’s understood and applied.</p>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="me.jpg" alt="Photo of Tony Kellen" class="about-photo">
+      <h3 class="about-name">Tony Kellen</h3>
+      <p>I founded Clear Metrics with a mission: to help businesses make sense of their data. With expertise in SQL, data modeling, and dashboard reporting, I provide the clarity leaders need to make informed decisions.</p>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email Tony at: <a href="mailto:anthonylkellen@gmail.com">anthonylkellen@gmail.com</a></p>
+  </section>
+  <footer>
+    <p>© 2025 Clear Metrics, LLC. All rights reserved.</p>
+  </footer>
 </body>
 </html>
