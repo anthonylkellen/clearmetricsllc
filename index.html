@@ -39,7 +39,7 @@
     /* === Fixed nav === */
     nav {
       background: #fff;
-      padding: 1rem 2rem;
+      padding: 1rem 1rem; /* Reduced left padding */
       display: flex;
       justify-content: flex-start; /* Align logo and menu on left */
       align-items: center;
@@ -49,8 +49,7 @@
       width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      flex-wrap: nowrap;
-      padding-left: 3rem;  /* Added extra space between logo and menu */
+      flex-wrap: nowrap; /* Prevent items from wrapping */
     }
     nav img {
       height: 70px;
@@ -63,10 +62,9 @@
       gap: 2rem; /* Space between menu items */
       margin: 0;
       padding: 0;
-      flex-wrap: nowrap;
+      flex-wrap: nowrap;  /* Prevent wrapping */
       justify-content: flex-start; /* Align menu items to the left */
-      flex-grow: 1;
-      margin-left: 2rem;  /* Added space between logo and menu items */
+      flex-grow: 1; /* Ensures ul doesn't overflow and uses available space */
     }
     nav ul li a {
       text-decoration: none;
