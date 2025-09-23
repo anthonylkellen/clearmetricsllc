@@ -63,13 +63,18 @@
       color: var(--brand-primary);
     }
 
-    /* Anchor spacing fix */
+    /* === Anchor spacing fix === */
     [id]::before {
       content: "";
       display: block;
-      height: 140px;   /* nav height (120px) + extra 20px */
+      height: 140px;   /* nav height (~120px) + 20px breathing room */
       margin-top: -140px;
-      visibility: hidden;
+    }
+    @media (max-width: 600px) {
+      [id]::before {
+        height: 120px;   /* smaller nav (~100px) + 20px gap */
+        margin-top: -120px;
+      }
     }
 
     .hero {
@@ -173,11 +178,6 @@
       }
       .hero p {
         font-size: 1rem;
-      }
-      /* Mobile anchor spacing */
-      [id]::before {
-        height: 120px;   /* nav (~100px) + 20px gap */
-        margin-top: -120px;
       }
     }
     @media (min-width: 1024px) {
