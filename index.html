@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +64,7 @@
       color: var(--brand-primary);
     }
 
-    .hero-anchor {
+    .anchor-spacer {
       position: relative;
       top: -120px;
       height: 0;
@@ -87,6 +88,7 @@
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
+      color: white;
     }
     .button {
       display: inline-block;
@@ -189,21 +191,21 @@
     </ul>
   </nav>
 
-  <!-- Anchor Spacer for Hero -->
-  <div id="home" class="hero-anchor"></div>
-
+  <div id="home" class="anchor-spacer"></div>
   <section class="hero">
     <h1>Clear Metrics, LLC</h1>
     <p>Data with Clarity. Transform your business decisions with simplified analytics.</p>
     <a href="#contact" class="button">Get in Touch</a>
   </section>
 
-  <section id="services">
+  <div id="services" class="anchor-spacer"></div>
+  <section>
     <h2>Services</h2>
     <p>I specialize in SQL data models, reporting, and analytics that turn complex information into clear, actionable insights. My approach ensures your data is not just stored — it’s understood and applied.</p>
   </section>
 
-  <section id="about">
+  <div id="about" class="anchor-spacer"></div>
+  <section>
     <h2>About Me</h2>
     <div class="about-container">
       <img src="me.jpg" alt="Photo of Tony Kellen" class="about-photo">
@@ -212,7 +214,8 @@
     </div>
   </section>
 
-  <section id="contact">
+  <div id="contact" class="anchor-spacer"></div>
+  <section>
     <h2>Contact Me</h2>
     <p>Email Tony at: <a href="mailto:anthonylkellen@gmail.com">anthonylkellen@gmail.com</a></p>
   </section>
