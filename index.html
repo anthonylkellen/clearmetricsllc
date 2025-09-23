@@ -1,41 +1,36 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Clear Metrics, LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-
   <style>
     :root {
-      --brand-primary: #2563EB;  /* Royal Blue */
+      --brand-primary: #2563EB;
       --brand-accent-mint: #10B981;
       --brand-accent-amber: #F59E0B;
-      --brand-ink: #111827;      /* Dark Text */
-      --brand-muted: #9CA3AF;    /* Muted Gray */
-      --brand-bg: #F3F4F6;       /* Light Gray Background */
+      --brand-ink: #111827;
+      --brand-muted: #9CA3AF;
+      --brand-bg: #F3F4F6;
     }
-
+    html {
+      scroll-behavior: smooth;
+    }
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: "Manrope", Arial, sans-serif;
       color: var(--brand-ink);
       background: var(--brand-bg);
       line-height: 1.6;
-
-      /* Flex column layout for sticky footer */
       display: flex;
       flex-direction: column;
     }
-
-    /* Navigation */
     nav {
       background: #fff;
       padding: 1rem 2rem;
@@ -68,15 +63,16 @@
     nav ul li a:hover {
       color: var(--brand-primary);
     }
-
-    /* Hero Section */
+    [id] {
+      scroll-margin-top: 120px;
+    }
     .hero {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem; /* desktop default */
+      padding: 6rem 2rem;
       background: var(--brand-primary);
       color: white;
     }
@@ -87,7 +83,6 @@
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: white;
     }
     .button {
       display: inline-block;
@@ -102,8 +97,6 @@
     .button:hover {
       background: #fbbf24;
     }
-
-    /* Sections */
     section {
       padding: 4rem 2rem;
       background: #fff;
@@ -121,8 +114,6 @@
       color: #374151;
       font-size: 1.1rem;
     }
-
-    /* About Section with Photo */
     .about-container {
       display: flex;
       flex-direction: column;
@@ -143,20 +134,14 @@
       margin: 0;
       color: var(--brand-primary);
     }
-
-    /* Footer */
     footer {
       background: var(--brand-bg);
       text-align: center;
       padding: 1.5rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
       font-size: 0.9rem;
       color: var(--brand-muted);
-      margin: 0;
-
-      margin-top: auto; /* stick footer to bottom */
+      margin-top: auto;
     }
-
-    /* Mobile */
     @media (max-width: 600px) {
       nav {
         padding: 1rem 1rem;
@@ -164,8 +149,6 @@
       }
       nav img {
         height: 75px;
-        align-self: flex-start;
-        margin-left: 0;
         margin-right: auto;
       }
       nav ul {
@@ -174,7 +157,6 @@
         gap: 1.25rem;
         margin-top: 0.5rem;
       }
-      /* Condensed hero for mobile */
       .hero {
         padding: 3rem 1rem;
       }
@@ -185,8 +167,6 @@
         font-size: 1rem;
       }
     }
-
-    /* Desktop logo scaling */
     @media (min-width: 1024px) {
       nav img {
         height: 105px;
@@ -195,8 +175,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav>
     <img src="clear-metrics-C-Manrope-horizontal.svg" alt="Clear Metrics Logo">
     <ul>
@@ -206,42 +184,29 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
-
-  <!-- Hero -->
   <section class="hero" id="home">
     <h1>Clear Metrics, LLC</h1>
     <p>Data with Clarity. Transform your business decisions with simplified analytics.</p>
     <a href="#contact" class="button">Get in Touch</a>
   </section>
-
-  <!-- Services -->
   <section id="services">
     <h2>Services</h2>
     <p>I specialize in SQL data models, reporting, and analytics that turn complex information into clear, actionable insights. My approach ensures your data is not just stored — it’s understood and applied.</p>
   </section>
-
-  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
     <div class="about-container">
       <img src="me.jpg" alt="Photo of Tony Kellen" class="about-photo">
       <h3 class="about-name">Tony Kellen</h3>
-      <p>I founded Clear Metrics with a mission: to help businesses make sense of their data. 
-      With expertise in SQL, data modeling, and dashboard reporting, I provide the clarity 
-      leaders need to make informed decisions.</p>
+      <p>I founded Clear Metrics with a mission: to help businesses make sense of their data. With expertise in SQL, data modeling, and dashboard reporting, I provide the clarity leaders need to make informed decisions.</p>
     </div>
   </section>
-
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <p>Email Tony at: <a href="mailto:anthonylkellen@gmail.com">anthonylkellen@gmail.com</a></p>
   </section>
-
-  <!-- Footer -->
   <footer>
     <p>© 2025 Clear Metrics, LLC. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
