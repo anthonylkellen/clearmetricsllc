@@ -62,9 +62,16 @@
     nav ul li a:hover {
       color: var(--brand-primary);
     }
-    [id] {
-      scroll-margin-top: 120px;
+
+    /* Anchor spacing fix (default desktop) */
+    [id]::before {
+      content: "";
+      display: block;
+      height: 140px; /* nav height (120px) + extra spacing (20px) */
+      margin-top: -140px;
+      visibility: hidden;
     }
+
     .hero {
       display: flex;
       flex-direction: column;
@@ -78,11 +85,12 @@
     .hero h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: white;
     }
     .hero p {
       font-size: 1.25rem;
       margin-bottom: 2rem;
-      color: white !important;
+      color: white !important; /* force white tagline */
     }
     .button {
       display: inline-block;
@@ -165,6 +173,11 @@
       }
       .hero p {
         font-size: 1rem;
+      }
+      /* Smaller anchor gap on mobile */
+      [id]::before {
+        height: 110px;  /* nav height (~95px) + 10-15px gap */
+        margin-top: -110px;
       }
     }
     @media (min-width: 1024px) {
